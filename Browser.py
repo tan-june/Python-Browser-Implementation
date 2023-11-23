@@ -18,7 +18,7 @@ class Browser(QMainWindow):
         back_btn.triggered.connect(self.browser.back)
         navbar.addAction(back_btn)
 
-        forward_btn =QAction(QIcon('icons/right.png'), 'Go Right', self)
+        forward_btn =QAction(QIcon('icons/right.png'), 'Forward', self)
         forward_btn.triggered.connect(self.browser.forward)
         navbar.addAction(forward_btn)
 
@@ -51,7 +51,7 @@ class Browser(QMainWindow):
     def navigate_to_url(self):
         q = QUrl(self.url_bar.text())
         if q.scheme() == "":
-            q.setScheme("http")
+            q.setScheme("https")
 
         self.browser.setUrl(q)
 
